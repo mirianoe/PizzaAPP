@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{pizza?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div *ngIf="pizza">
+
+    <ion-header collapse="condense" style="margin-top: 10px">
+      <ion-toolbar>
+        <ion-title size="large">{{pizza.name}}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-card>
+
+      <ion-img [src]="urlBase + '/pizza-photos/' + pizza.photoName"></ion-img>
+      <ion-card-content>
+        <ion-label>Condimenti:</ion-label>
+        <ul *ngFor="let topping of pizza.toppings">
+          <li>{{topping.name}}</li>
+        </ul>
+      </ion-card-content>
+
+    </ion-card>
+
+  </div>
+
+</ion-content>
+

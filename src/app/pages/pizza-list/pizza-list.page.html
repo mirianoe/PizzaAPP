@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true" *ngIf="pizzas">
+
+  <ion-header collapse="condense" style="margin-top: 10px">
+    <ion-toolbar>
+      <ion-title size="large">Le nostre pizze</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list inset="false" *ngFor="let pizza of pizzas">
+    <ion-item [routerLink]="'/pizza-detail/'+ pizza?.id">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="urlBase + '/pizza-photos/' + pizza?.photoName"></ion-img>
+      </ion-thumbnail>
+      <ion-label>{{pizza?.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
