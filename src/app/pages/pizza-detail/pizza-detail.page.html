@@ -3,6 +3,18 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleFavorite($event, pizza?.id)">
+        <ion-icon *ngIf="pizza?.favorite" slot="icon-only" name="heart"></ion-icon>
+        <ion-icon *ngIf="!pizza?.favorite" slot="icon-only" name="heart-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="presentEditPizza(pizza?.id)">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+      <ion-button (click)="presentAlertConfirm(pizza?.id)">
+        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>{{pizza?.name}}</ion-title>
   </ion-toolbar>
 </ion-header>

@@ -9,12 +9,12 @@ import {PizzaListPageRoutingModule} from './pizza-list-routing.module';
 import {PizzaListPage} from './pizza-list.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    PizzaListPageRoutingModule
-  ],
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        PizzaListPageRoutingModule,
+    ],
   declarations: [PizzaListPage]
 })
 export class PizzaListPageModule {}

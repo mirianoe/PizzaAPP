@@ -4,17 +4,13 @@ import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'pizza-list',
+    redirectTo: 'tabs',
     pathMatch: 'full'
   },
   {
-    path: 'pizza-list',
-    loadChildren: () => import('./pages/pizza-list/pizza-list.module').then(m => m.PizzaListPageModule)
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
-  {
-    path: 'pizza-detail/:pizzaId',
-    loadChildren: () => import('./pages/pizza-detail/pizza-detail.module').then(m => m.PizzaDetailPageModule)
-  }
 ];
 
 @NgModule({

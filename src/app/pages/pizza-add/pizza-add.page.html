@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuova pizza</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="toppings">
+
+  <ion-header collapse="condense" style="margin-top: 10px">
+    <ion-toolbar>
+      <ion-title size="large">Nuova pizza</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="form" >
+
+    <ion-list>
+
+      <ion-item>
+
+        <ion-img *ngIf="!photoService.getWebPath()"
+                 src="assets/icon/no_images.png"
+                 (click)="takePizzaPhoto()"
+        ></ion-img>
+        <ion-img *ngIf="photoService.getWebPath()"
+                 [src]="photoService.getWebPath()"
+                 (click)="takePizzaPhoto()"
+        ></ion-img>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Nome</ion-label>
+        <ion-input
+          [(ngModel)]="name"
+          placeholder="Nome della pizza"
+          formControlName="name"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item *ngFor="let topping of toppings">
+        <ion-checkbox [(ngModel)]="topping.isChecked"
+                      slot="start"
+                      formControlName="toppings"
+        ></ion-checkbox>
+        <ion-label>{{topping?.name}}</ion-label>
+      </ion-item>
+
+    </ion-list>
+
+  </form>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <ion-button expand="full" (click)="cancel()">
+          <b>Cancel</b>
+        </ion-button>
+      </ion-col>
+      <ion-col col-6>
+        <ion-button expand="full" (click)="savePizza()">
+          <b>Save</b>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

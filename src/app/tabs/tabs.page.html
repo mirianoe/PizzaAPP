@@ -1,0 +1,17 @@
+<ion-tabs>
+
+  <ion-tab-bar #myTabBar id="myTabBar" slot="bottom">
+
+    <ion-tab-button tab="pizza-list" (click)="goToTab(myTabBar)">
+      <ion-icon name="pizza-outline"></ion-icon>
+      <ion-label>Le nostre pizze</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="pizza-favorites" (click)="goToTab(myTabBar)">
+      <ion-icon name="heart-outline"></ion-icon>
+      <ion-label>Le mie preferite</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+
+</ion-tabs>

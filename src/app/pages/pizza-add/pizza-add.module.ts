@@ -4,18 +4,18 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import {IonicModule} from '@ionic/angular';
 
-import {PizzaDetailPageRoutingModule} from './pizza-detail-routing.module';
+import {PizzaAddPageRoutingModule} from './pizza-add-routing.module';
 
-import {PizzaDetailPage} from './pizza-detail.page';
+import {PizzaAddPage} from './pizza-add.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PizzaDetailPageRoutingModule,
+    PizzaAddPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [PizzaDetailPage]
+  declarations: [PizzaAddPage]
 })
-export class PizzaDetailPageModule {}
+export class PizzaAddPageModule {}

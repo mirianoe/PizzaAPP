@@ -15,3 +15,15 @@ Frontend mobile puntanta n 1 dell'Arte della Programmazione
 Vanno fatte delle operazioni nell'IDE di Apple che potete vedere nel video realizzato con la pagina FaceBook 'L'Arte della Programmazione'.
 
 5) Tutto qua. Buon divertimento!!!
+
+P.S. Starting with Android 9 (API level 28), cleartext support is disabled by default.
+
+Create a XML res/xml/network_security_config.xml
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true" />
+</network-security-config>
+
+Reference this file in your tag Application, inside AndroidManifest.xml. Like:
+android:networkSecurityConfig="@xml/network_security_config"
+
